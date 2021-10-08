@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Alina</string>
+    <string name="button1">Next</string>
+    <string name="button2">Button</string>
+    <string name="button3">converter</string>
+    <string name="bs_team">©BS Team</string>
+    <string name="image">image</string>
+    <string name="Back">Button</string>
+    <string name="answer">Результат</string>
+    <string name="translate">перевести</string>
+</resources>

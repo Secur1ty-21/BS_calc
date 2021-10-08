@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button1">Next</string>
+    <string name="button2">Button</string>
+    <string name="button3">converter</string>
+    <string name="bs_team">©BS Team</string>
+    <string name="image">image</string>
+</resources>
