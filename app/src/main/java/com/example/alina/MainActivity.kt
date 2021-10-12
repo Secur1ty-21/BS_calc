@@ -14,16 +14,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        next = findViewById(R.id.button1)
+        //next = findViewById(R.id.button1)
         calculator = findViewById(R.id.button2)
         converter = findViewById(R.id.button5)
         Log.d("MyLog", "1")
-        next?.setOnClickListener(
-            View.OnClickListener {
-                val intent = Intent("android.intent.action.New")
-                startActivity(intent)
-            }
-        )
+//        next?.setOnClickListener(
+//            View.OnClickListener {
+//                val intent = Intent("android.intent.action.New")
+//                startActivity(intent)
+//            }
+//        )
         calculator?.setOnClickListener(
             View.OnClickListener {
                 val intent2 = Intent("android.intent.action.Calculator")
