@@ -16,6 +16,7 @@ class OpenScreen : AppCompatActivity(){
             }
             val intent = Intent("android.intent.action.MainActivity")
             startActivity(intent)
+            finish()
         }.start()
 
     }

@@ -5,7 +5,9 @@
     <string name="button3">converter</string>
     <string name="bs_team">©BS Team</string>
     <string name="image">image</string>
-    <string name="Back">Button</string>
+    <string name="Back">Back</string>
     <string name="answer">Результат</string>
     <string name="translate">перевести</string>
+    <string name="error">Error input</string>
+    <string name="error1">division by zero</string>
 </resources>

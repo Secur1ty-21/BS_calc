@@ -6,16 +6,137 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/back1"
         android:layout_width="94dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="257dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="426dp"
-        android:text="Button"
+        android:layout_marginBottom="12dp"
+        android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/division" />
+
+    <TextView
+        android:id="@+id/answer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="0"
+        app:layout_constraintEnd_toEndOf="@+id/system2"
+        app:layout_constraintStart_toStartOf="@+id/system2"
+        app:layout_constraintTop_toBottomOf="@+id/system2" />
+
+    <EditText
+        android:id="@+id/number1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:hint="число"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/system1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="система счисления"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/number1"
+        app:layout_constraintStart_toStartOf="@+id/number1"
+        app:layout_constraintTop_toBottomOf="@+id/number1" />
+
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="число2"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/system1"
+        app:layout_constraintStart_toStartOf="@+id/system1"
+        app:layout_constraintTop_toBottomOf="@+id/system1" />
+
+    <EditText
+        android:id="@+id/system2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="система счисления2"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/number2"
+        app:layout_constraintStart_toStartOf="@+id/number2"
+        app:layout_constraintTop_toBottomOf="@+id/number2" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="12dp"
+        android:text="+"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/minus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="104dp"
+        android:text="-"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="12dp"
+        android:text="*"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/division"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toBottomOf="@+id/answer1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="104dp"
+        android:text="÷"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toEndOf="@+id/minus" />
+
+    <EditText
+        android:id="@+id/new_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="новая ситема счисления"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/system2"
+        app:layout_constraintTop_toBottomOf="@+id/system2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

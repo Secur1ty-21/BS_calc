@@ -1,14 +1,12 @@
 package com.example.alina
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import java.lang.Math.pow
+import kotlin.math.pow
 
 class Converter : AppCompatActivity() {
     private var number : EditText? = null
@@ -27,93 +25,110 @@ class Converter : AppCompatActivity() {
         buttonTranslate = findViewById(R.id.translate)
         textAnswer = findViewById(R.id.answer)
         buttonBack = findViewById(R.id.back)
-        buttonBack?.setOnClickListener(
-            View.OnClickListener {
-                val intent4 = Intent("android.intent.category.MainActivity")
-                finish()
+        buttonBack?.setOnClickListener {
+            finish()
+        }
+
+        buttonTranslate?.setOnClickListener {
+
+            val num: String = number?.text.toString()
+            val startSystem: String = initial?.text.toString()
+            val finishSystem: String = finite?.text.toString()
+            var startSystemInt = 0
+            var finishSystemInt = 0
+            var len: Int = num.length - 1
+            var answer = 0
+            var degree = 0
+            var remains = 0
+            if (num != "" && startSystem != "" && finishSystem != "") {
+                startSystemInt = startSystem.toInt()
+                finishSystemInt = finishSystem.toInt()
+
+            } else
+                textAnswer?.text = getString(R.string.error)
+            while (len != -1) {
+
+                if (num[len] == 'A')
+                    remains = 10
+                if (num[len] == 'B')
+                    remains = 11
+                if (num[len] == 'C')
+                    remains = 12
+                if (num[len] == 'D')
+                    remains = 13
+                if (num[len] == 'E')
+                    remains = 14
+                if (num[len] == 'F')
+                    remains = 15
+                if (num[len] == '1')
+                    remains = 1
+                if (num[len] == '2')
+                    remains = 2
+                if (num[len] == '3')
+                    remains = 3
+                if (num[len] == '4')
+                    remains = 4
+                if (num[len] == '5')
+                    remains = 5
+                if (num[len] == '6')
+                    remains = 6
+                if (num[len] == '7')
+                    remains = 7
+                if (num[len] == '8')
+                    remains = 8
+                if (num[len] == '9')
+                    remains = 9
+                if (num[len] == '0')
+                    remains = 0
+                answer += remains * startSystemInt.toDouble().pow(degree.toDouble()).toInt()
+                len--
+                degree++
+
             }
-        )
-
-        buttonTranslate?.setOnClickListener(
-            View.OnClickListener {
-
-                var num : String = number?.text.toString()
-                var startSystem : String = initial?.text.toString()
-                var finishSystem : String = finite?.text.toString()
-                var startSystemInt : Int = 0
-                var finishSystemInt: Int = 0
-                var len : Int = num.length - 1
-                var answer : Int = 0
-                var degree : Int = 0
-                var result : Int = 0
-                var e : Int = 0
-                var clone : Int = 0
-
-                var remains: Int = 0
-                if (num != "" && startSystem != "" && finishSystem != "") {
-                    startSystemInt  = startSystem.toInt()
-                    Log.d("MyLog", "$startSystemInt")
-                    finishSystemInt = finishSystem.toInt()
-                    Log.d("MyLog", "$finishSystemInt")
-
-                }
-                else
-                    textAnswer?.text = "Error input"
-
-
-                while (len != -1) {
-
-                    if (num[len] == 'A')
-                        remains = 10
-                    if (num[len] == 'B')
-                        remains = 11
-                    if (num[len] == 'C')
-                        remains = 12
-                    if (num[len] == 'D')
-                        remains = 13
-                    if (num[len] == 'E')
-                        remains = 14
-                    if (num[len] == 'F')
-                        remains = 15
-                    if (num[len] == '1')
-                        remains = 1
-                    if (num[len] == '2')
-                        remains = 2
-                    if (num[len] == '3')
-                        remains = 3
-                    if (num[len] == '4')
-                        remains = 4
-                    if (num[len] == '5')
-                        remains = 5
-                    if (num[len] == '6')
-                        remains = 6
-                    if (num[len] == '7')
-                        remains = 7
-                    if (num[len] == '8')
-                        remains = 8
-                    if (num[len] == '9')
-                        remains = 9
-                    if (num[len] == '0')
-                        remains = 0
-                    answer += remains * pow(startSystemInt.toDouble(), degree.toDouble()).toInt()
-                    len--
-                    degree++
-
-                }
-
-                var save = 0
-
-
-                clone = 0
-                while (answer > 0){
-                    remains = answer % finishSystemInt
-                    save += remains * pow(10.0, clone.toDouble()).toInt()
-                    answer /= finishSystemInt
-                    clone++
-                }
-                //Toast.makeText(this, "$answer", Toast.LENGTH_SHORT).show()
-                textAnswer?.text = save.toString()
+            var save = answer
+            var result1 = ""
+            while (save > 0) {
+                remains = save % finishSystemInt
+                if (remains == 10)
+                    result1 += "A"
+                if (remains == 11)
+                    result1 += "B"
+                if (remains == 12)
+                    result1 += "C"
+                if (remains == 13)
+                    result1 += "D"
+                if (remains == 14)
+                    result1 += "E"
+                if (remains == 15)
+                    result1 += "F"
+                if (remains == 1)
+                    result1 += "1"
+                if (remains == 2)
+                    result1 += "2"
+                if (remains == 3)
+                    result1 += "3"
+                if (remains == 4)
+                    result1 += "4"
+                if (remains == 5)
+                    result1 += "5"
+                if (remains == 6)
+                    result1 += "6"
+                if (remains == 7)
+                    result1 += "7"
+                if (remains == 8)
+                    result1 += "8"
+                if (remains == 9)
+                    result1 += "9"
+                if (remains == 0)
+                    result1 += "0"
+                Log.d("MyLog", "$save")
+                save /= finishSystemInt
             }
-        )
+            result1 = result1.reversed()
+            if (answer == 0)
+                result1 = "0"
+            Log.d("MyLog", "$answer")
+            textAnswer?.text = result1
+        }
     }
 }
