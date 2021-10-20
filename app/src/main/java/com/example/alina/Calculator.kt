@@ -1,7 +1,7 @@
 package com.example.alina
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -18,8 +18,9 @@ class Calculator : AppCompatActivity(){
     private var minusS : Button? = null
     private var multiply : Button? = null
     private var division : Button? = null
-    private var back : Button? = null
     private var newSystem : EditText? = null
+    private var converter : Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
@@ -32,8 +33,13 @@ class Calculator : AppCompatActivity(){
         minusS = findViewById(R.id.minus)
         multiply = findViewById(R.id.multiply)
         division = findViewById(R.id.division)
-        back = findViewById(R.id.back1)
         newSystem = findViewById(R.id.new_system)
+        converter = findViewById(R.id.converter)
+        converter?.setOnClickListener {
+            val intent = Intent(this, Converter::class.java)
+            startActivity(intent)
+            finish()
+        }
         plusS?.setOnClickListener {
             val digit: String = number1?.text.toString()
             val digit2: String = number2?.text.toString()
@@ -45,6 +51,7 @@ class Calculator : AppCompatActivity(){
                     val answer = translateToTen(digit, systemS1.toInt()) + translateToTen(
                         digit2,
                         systemS2.toInt()
+
                     )
                     answer1?.text = translateToNew(answer, newSystem1.toInt())
                 } else
@@ -107,9 +114,6 @@ class Calculator : AppCompatActivity(){
             } else
                 answer1?.text = getText(R.string.error)
         }
-        back?.setOnClickListener {
-            finish()
-        }
     }
     private fun translateToTen(digit : String, system: Int):Int{
         var answer = 0
@@ -152,11 +156,9 @@ class Calculator : AppCompatActivity(){
             answer += remains * system.toDouble().pow(degree.toDouble()).toInt()
             len--
             degree++
-
         }
         return answer
     }
-
     private fun translateToNew(digit : Int, newSystem: Int) : String {
         var save = digit
         var answer = ""
@@ -196,7 +198,6 @@ class Calculator : AppCompatActivity(){
                 answer += "9"
             if (remains == 0)
                 answer += "0"
-            Log.d("MyLog", "$save")
             save /= newSystem
             degree++
         }

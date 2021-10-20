@@ -1,7 +1,7 @@
 package com.example.alina
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -14,7 +14,7 @@ class Converter : AppCompatActivity() {
     private var finite : EditText? = null
     private var buttonTranslate : Button? = null
     private var textAnswer : TextView? = null
-    private var buttonBack : Button? = null
+    private var calculator : Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +24,13 @@ class Converter : AppCompatActivity() {
         finite = findViewById(R.id.finite)
         buttonTranslate = findViewById(R.id.translate)
         textAnswer = findViewById(R.id.answer)
-        buttonBack = findViewById(R.id.back)
-        buttonBack?.setOnClickListener {
+        calculator = findViewById(R.id.button6)
+        calculator?.setOnClickListener {
+            val intent2 = Intent(this, Calculator::class.java)
+            startActivity(intent2)
             finish()
         }
-
         buttonTranslate?.setOnClickListener {
-
             val num: String = number?.text.toString()
             val startSystem: String = initial?.text.toString()
             val finishSystem: String = finite?.text.toString()
@@ -43,11 +43,9 @@ class Converter : AppCompatActivity() {
             if (num != "" && startSystem != "" && finishSystem != "") {
                 startSystemInt = startSystem.toInt()
                 finishSystemInt = finishSystem.toInt()
-
             } else
                 textAnswer?.text = getString(R.string.error)
             while (len != -1) {
-
                 if (num[len] == 'A')
                     remains = 10
                 if (num[len] == 'B')
@@ -83,7 +81,6 @@ class Converter : AppCompatActivity() {
                 answer += remains * startSystemInt.toDouble().pow(degree.toDouble()).toInt()
                 len--
                 degree++
-
             }
             var save = answer
             var result1 = ""
@@ -121,13 +118,11 @@ class Converter : AppCompatActivity() {
                     result1 += "9"
                 if (remains == 0)
                     result1 += "0"
-                Log.d("MyLog", "$save")
                 save /= finishSystemInt
             }
             result1 = result1.reversed()
             if (answer == 0)
                 result1 = "0"
-            Log.d("MyLog", "$answer")
             textAnswer?.text = result1
         }
     }

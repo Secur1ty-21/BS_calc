@@ -14,7 +14,7 @@ class OpenScreen : AppCompatActivity(){
                 time++
                 Thread.sleep(1000)
             }
-            val intent = Intent("android.intent.action.MainActivity")
+            val intent = Intent("android.intent.action.Calculator")
             startActivity(intent)
             finish()
         }.start()

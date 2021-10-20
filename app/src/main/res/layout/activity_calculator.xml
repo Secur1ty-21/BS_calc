@@ -3,19 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/back1"
-        android:layout_width="94dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/division" />
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:backgroundTint="@color/background_color"
+    android:backgroundTintMode="add">
 
     <TextView
         android:id="@+id/answer1"
@@ -23,6 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:hint="0"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/text2"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/system2"
         app:layout_constraintStart_toStartOf="@+id/system2"
         app:layout_constraintTop_toBottomOf="@+id/system2" />
@@ -31,12 +25,15 @@
         android:id="@+id/number1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="111dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="101dp"
         android:ems="10"
         android:hint="число"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +46,9 @@
         android:ems="10"
         android:hint="система счисления"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/number1"
         app:layout_constraintStart_toStartOf="@+id/number1"
         app:layout_constraintTop_toBottomOf="@+id/number1" />
@@ -61,6 +61,9 @@
         android:ems="10"
         android:hint="число2"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/system1"
         app:layout_constraintStart_toStartOf="@+id/system1"
         app:layout_constraintTop_toBottomOf="@+id/system1" />
@@ -73,6 +76,9 @@
         android:ems="10"
         android:hint="система счисления2"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/number2"
         app:layout_constraintStart_toStartOf="@+id/number2"
         app:layout_constraintTop_toBottomOf="@+id/number2" />
@@ -81,53 +87,57 @@
         android:id="@+id/plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/button"
         android:text="+"
+        android:textColor="@color/text2"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/minus"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/answer1" />
 
     <Button
         android:id="@+id/minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="144dp"
+        android:backgroundTint="@color/button"
         android:text="-"
+        android:textColor="@color/text2"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plus" />
 
     <Button
         android:id="@+id/multiply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="@color/button"
         android:text="*"
+        android:textColor="@color/text2"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/division"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/plus"
-        app:layout_constraintTop_toBottomOf="@+id/answer1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/answer1" />
 
     <Button
         android:id="@+id/division"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="144dp"
+        android:backgroundTint="@color/button"
         android:text="÷"
+        android:textColor="@color/text2"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toEndOf="@+id/minus" />
+        app:layout_constraintTop_toBottomOf="@+id/multiply" />
 
     <EditText
         android:id="@+id/new_system"
@@ -137,6 +147,83 @@
         android:ems="10"
         android:hint="новая ситема счисления"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/system2"
+        app:layout_constraintStart_toStartOf="@+id/system2"
         app:layout_constraintTop_toBottomOf="@+id/system2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="680dp"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/converter"
+                    android:layout_width="139dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/button"
+                    android:text="converter"
+                    android:textColor="@color/text2"
+                    app:rippleColor="@color/button" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/calculator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/button"
+                    android:text="calculator"
+                    android:textColor="@color/text2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/button"
+                    android:text="Button"
+                    android:textColor="@color/text2" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="1dp"
+        android:backgroundTint="@color/button"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

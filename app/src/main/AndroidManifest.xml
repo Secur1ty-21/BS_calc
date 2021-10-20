@@ -10,15 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alina">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MainActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".New"
             android:exported="true">
             <intent-filter>
