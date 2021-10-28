@@ -1,42 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     android:backgroundTint="@color/background_color"
     android:backgroundTintMode="add">
 
-    <TextView
-        android:id="@+id/answer1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:hint="0"
-        android:textColor="@color/text2"
-        android:textColorHint="@color/text2"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/system2"
-        app:layout_constraintStart_toStartOf="@+id/system2"
-        app:layout_constraintTop_toBottomOf="@+id/system2" />
-
     <EditText
         android:id="@+id/number1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="79dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
-        android:hint="число"
+        android:hint="@string/number"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/system1"
@@ -44,14 +29,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="система счисления"
-        android:inputType="textPersonName"
+        android:hint="@string/startSystem"
+        android:inputType="numberSigned"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/number1"
         app:layout_constraintStart_toStartOf="@+id/number1"
-        app:layout_constraintTop_toBottomOf="@+id/number1" />
+        app:layout_constraintTop_toBottomOf="@+id/number1"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/number2"
@@ -59,14 +45,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="число2"
+        android:hint="@string/number2"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/system1"
         app:layout_constraintStart_toStartOf="@+id/system1"
-        app:layout_constraintTop_toBottomOf="@+id/system1" />
+        app:layout_constraintTop_toBottomOf="@+id/system1"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/system2"
@@ -74,70 +61,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="система счисления2"
-        android:inputType="textPersonName"
+        android:hint="@string/startSystem2"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/number2"
         app:layout_constraintStart_toStartOf="@+id/number2"
-        app:layout_constraintTop_toBottomOf="@+id/number2" />
-
-    <Button
-        android:id="@+id/plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/button"
-        android:text="+"
-        android:textColor="@color/text2"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer1" />
-
-    <Button
-        android:id="@+id/minus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="144dp"
-        android:backgroundTint="@color/button"
-        android:text="-"
-        android:textColor="@color/text2"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plus" />
-
-    <Button
-        android:id="@+id/multiply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
-        android:backgroundTint="@color/button"
-        android:text="*"
-        android:textColor="@color/text2"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer1" />
-
-    <Button
-        android:id="@+id/division"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="144dp"
-        android:backgroundTint="@color/button"
-        android:text="÷"
-        android:textColor="@color/text2"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multiply" />
+        app:layout_constraintTop_toBottomOf="@+id/number2"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/new_system"
@@ -145,85 +77,122 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="новая ситема счисления"
-        android:inputType="textPersonName"
+        android:hint="@string/finishSystem"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/system2"
         app:layout_constraintStart_toStartOf="@+id/system2"
-        app:layout_constraintTop_toBottomOf="@+id/system2" />
+        app:layout_constraintTop_toBottomOf="@+id/system2"
+        android:autofillHints="no" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="680dp"
-        android:background="@color/background_color"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/converter"
-                    android:layout_width="139dp"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/button"
-                    android:text="converter"
-                    android:textColor="@color/text2"
-                    app:rippleColor="@color/button" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/calculator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/button"
-                    android:text="calculator"
-                    android:textColor="@color/text2" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/button"
-                    android:text="Button"
-                    android:textColor="@color/text2" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button7"
+    <TextView
+        android:id="@+id/answer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/zero"
+        android:textColor="@color/text2"
+        android:textColorHint="@color/text2"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/new_system"
+        app:layout_constraintStart_toStartOf="@+id/new_system"
+        app:layout_constraintTop_toBottomOf="@+id/new_system" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/button"
-        android:text="Button"
+        android:text="@string/plus"
+        android:textColor="@color/text2"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer1"
+        app:layout_constraintEnd_toStartOf="@+id/multiply"/>
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/button"
+        android:text="@string/minus"
+        android:textColor="@color/text2"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/plus"
+        app:layout_constraintTop_toBottomOf="@+id/plus"
+        app:layout_constraintEnd_toEndOf="@+id/plus"/>
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:backgroundTint="@color/button"
+        android:text="@string/multiply"
+        android:textColor="@color/text2"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/answer1"
+        app:layout_constraintStart_toEndOf="@+id/plus"/>
+
+    <Button
+        android:id="@+id/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/button"
+        android:text="@string/division"
+        android:textColor="@color/text2"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/multiply"
+        app:layout_constraintStart_toStartOf="@+id/multiply"
+        app:layout_constraintTop_toBottomOf="@+id/multiply" />
+
+    <Button
+        android:id="@+id/converter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:text="@string/converter"
+        android:textColor="@color/text2"
+        app:rippleColor="@color/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/calculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:text="@string/calculator"
+        android:textColor="@color/text2"
+        app:layout_constraintStart_toEndOf="@+id/converter"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:text="@string/future"
+        android:textColor="@color/text2"
+        app:layout_constraintStart_toEndOf="@id/calculator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/settings1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button"
+        android:text="@string/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/text2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

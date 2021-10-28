@@ -8,16 +8,10 @@ class OpenScreen : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_openscreen)
-        var time = 0
         Thread{
-            while (time < 3){
-                time++
-                Thread.sleep(1000)
-            }
-            val intent = Intent("android.intent.action.Calculator")
-            startActivity(intent)
+            Thread.sleep(3000)
+            startActivity(Intent(this, Converter::class.java))
             finish()
         }.start()
-
     }
 }

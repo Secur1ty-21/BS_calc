@@ -1,85 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
     android:backgroundTint="@color/background_color">
 
     <EditText
-        android:id="@+id/number"
+        android:id="@+id/numbers"
         android:layout_width="258dp"
         android:layout_height="48dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="77dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
-        android:hint="число"
-        android:inputType="textPersonName"
+        android:hint="@string/number"
+        android:inputType="textCapCharacters"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/initial"
         android:layout_width="258dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="149dp"
         android:ems="10"
-        android:hint="начальная сисема счиления "
-        android:inputType="textPersonName"
+        android:hint="@string/startSystem"
+        android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
-        app:layout_constraintEnd_toEndOf="@+id/number"
+        app:layout_constraintEnd_toEndOf="@+id/numbers"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/number"
-        app:layout_constraintTop_toBottomOf="@+id/number" />
+        app:layout_constraintStart_toStartOf="@+id/numbers"
+        app:layout_constraintTop_toBottomOf="@+id/numbers"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/finite"
         android:layout_width="258dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="150dp"
         android:ems="10"
-        android:hint="итоговая система счисления"
-        android:inputType="textPersonName"
+        android:hint="@string/finishSystem"
+        android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:textColor="@color/text2"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="@+id/initial"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/initial"
-        app:layout_constraintTop_toBottomOf="@+id/initial" />
+        app:layout_constraintTop_toBottomOf="@+id/initial"
+        android:importantForAutofill="no"/>
 
     <TextView
         android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="0"
+        android:hint="@string/zero"
+        android:textColor="@color/text2"
         android:textColorHighlight="@color/text2"
         android:textColorHint="@color/text2"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/translate"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="@+id/translate"
-        app:layout_constraintTop_toBottomOf="@+id/translate" />
+        app:layout_constraintTop_toBottomOf="@+id/translate"/>
 
     <Button
         android:id="@+id/translate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="360dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@color/button"
-        android:text="calculate"
+        android:text="@string/convert"
         android:textColor="@color/text2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/finite"
@@ -89,44 +87,42 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
         android:backgroundTint="@color/button"
-        android:text="converter"
+        android:text="@string/converter"
         android:textColor="@color/text2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button6" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/button"
-        android:text="button"
+        android:text="@string/future"
         android:textColor="@color/text2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button6"/>
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/button"
-        android:text="calculator"
+        android:text="@string/calculator"
         android:textColor="@color/text2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3" />
+        app:layout_constraintStart_toEndOf="@+id/button"/>
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/setting2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
         android:backgroundTint="@color/button"
-        android:text="Button"
+        android:text="@string/settings"
+        android:textColor="@color/text2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
